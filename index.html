@@ -354,6 +354,48 @@
       --nav-border: rgba(13, 148, 136, 0.15);
       --grad-text: linear-gradient(135deg, #0d9488 0%, #60a5fa 55%, #2dd4bf 100%);
     }
+    /* ── NEON TEAL (zinc dark + electric teal) ──── */
+    [data-theme="neon"] {
+      --bg-base:       #09090b;
+      --bg-page:       #18181b;
+      --bg-surface:    rgba(39,39,42,0.5);
+      --bg-raised:     #27272a;
+      --bg-overlay:    rgba(24,24,27,0.90);
+      --bg-input:      rgba(255,255,255,0.04);
+      --bg-hover:      rgba(45,212,191,0.06);
+      --bg-badge:      rgba(45,212,191,0.12);
+      --border:        rgba(255,255,255,0.06);
+      --border-mid:    rgba(255,255,255,0.10);
+      --border-accent: rgba(45,212,191,0.25);
+      --border-focus:  rgba(45,212,191,0.6);
+      --text-primary:  #f4f4f5;
+      --text-body:     #d4d4d8;
+      --text-muted:    #71717a;
+      --text-faint:    #3f3f46;
+      --accent:        #2dd4bf;   /* teal 400 */
+      --accent-bright: #5eead4;   /* teal 300 */
+      --accent-deep:   #14b8a6;   /* teal 500 */
+      --accent-glow:   rgba(45,212,191,0.25);
+      --cyan:          #34d399;   /* emerald — secondary */
+      --cyan-dim:      rgba(52,211,153,0.12);
+      --cyan-glow:     rgba(52,211,153,0.3);
+      --amber:         #fbbf24;
+      --green:         #34d399;
+      --red:           #ef4444;
+      --shadow-sm:     0 1px 3px rgba(0,0,0,0.5);
+      --shadow-md:     0 4px 20px rgba(0,0,0,0.6);
+      --shadow-lg:     0 12px 40px rgba(0,0,0,0.7);
+      --shadow-accent: 0 0 20px rgba(45,212,191,0.35);
+      --shadow-cyan:   0 0 16px rgba(52,211,153,0.3);
+      --shadow-card:   0 2px 12px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.06);
+      --grid-line:     rgba(45,212,191,0.03);
+      --noise-opacity: 0.02;
+      --scrollbar:     #27272a;
+      --scrollbar-hover: #2dd4bf;
+      --nav-bg:        rgba(9,9,11,0.94);
+      --nav-border:    rgba(45,212,191,0.15);
+      --grad-text: linear-gradient(90deg, #2dd4bf, #5eead4, #2dd4bf, #14b8a6);
+    }
 
 
     /* ════ Base ════════════════════════════════════════ */
@@ -1033,6 +1075,19 @@
       left: -100px;
       background: radial-gradient(circle, rgba(96, 165, 250, 0.08), transparent 70%);
     }
+
+    [data-theme="neon"] .bg-blob-1 {
+      top: -100px;
+      right: -150px;
+      background: radial-gradient(circle, rgba(45, 212, 191, 0.12), transparent 70%);
+      opacity: 1;
+    }
+
+    [data-theme="neon"] .bg-blob-2 {
+      bottom: -100px;
+      left: -100px;
+      background: radial-gradient(circle, rgba(52, 211, 153, 0.08), transparent 70%);
+    }
   </style>
 </head>
 
@@ -1103,6 +1158,10 @@
           <div class="theme-dot" style="background:linear-gradient(135deg,#0d9488,#60a5fa)"></div>
           <span class="theme-name">Arctic Breeze</span>
         </div>
+        <div class="theme-option" onclick="setTheme('neon')" data-theme-opt="neon">
+          <div class="theme-dot" style="background:linear-gradient(135deg,#2dd4bf,#34d399)"></div>
+          <span class="theme-name">Neon Teal</span>
+        </div>
       </div>
     </div>
 
@@ -1156,6 +1215,9 @@
       <div onclick="setTheme('arctic')"
         style="width:20px;height:20px;border-radius:50%;background:linear-gradient(135deg,#0d9488,#60a5fa);cursor:pointer;border:2px solid rgba(0,0,0,0.1)"
         title="Arctic Breeze"></div>
+      <div onclick="setTheme('neon')"
+        style="width:20px;height:20px;border-radius:50%;background:linear-gradient(135deg,#2dd4bf,#34d399);cursor:pointer;border:2px solid rgba(255,255,255,0.2)"
+        title="Neon Teal"></div>
     </div>
   </div>
 
@@ -1178,7 +1240,7 @@
       <p
         style="font-family:'Lora',serif;font-size:16px;color:var(--text-muted);max-width:480px;line-height:1.75;font-style:italic;transition:color var(--transition)">
         Token warna, tipografi, spasi, dan komponen EduTech — diekstrak langsung dari Figma. Tersedia <strong
-          style="font-style:normal;color:var(--text-body)">7 tema</strong> yang bisa diganti langsung dari panel
+          style="font-style:normal;color:var(--text-body)">8 tema</strong> yang bisa diganti langsung dari panel
         samping.
       </p>
       <!-- theme preview chips -->
@@ -1190,6 +1252,7 @@
         <div class="chip" onclick="setTheme('light')" style="cursor:pointer">🌤 Morning Campus</div>
         <div class="chip" onclick="setTheme('sakura')" style="cursor:pointer">🌸 Sakura</div>
         <div class="chip" onclick="setTheme('arctic')" style="cursor:pointer">🪸 Arctic Breeze</div>
+        <div class="chip" onclick="setTheme('neon')" style="cursor:pointer">⚡ Neon Teal</div>
       </div>
     </header>
 
